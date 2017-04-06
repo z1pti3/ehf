@@ -4,6 +4,7 @@ email headers to attachment files
 
 Simple GUI application to covert email headers with base64 attachments to files which can be openned from the application.
 
+![Screenshot](screenshot.png)
 
 Usage:
 1. Run the application
