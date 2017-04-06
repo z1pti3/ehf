@@ -55,6 +55,7 @@
             this.listBox_attachments.ItemHeight = 25;
             this.listBox_attachments.Location = new System.Drawing.Point(12, 398);
             this.listBox_attachments.Name = "listBox_attachments";
+            this.listBox_attachments.ScrollAlwaysVisible = true;
             this.listBox_attachments.Size = new System.Drawing.Size(1398, 204);
             this.listBox_attachments.TabIndex = 1;
             this.listBox_attachments.DoubleClick += new System.EventHandler(this.listBox_attachments_DoubleClick);
