@@ -20,13 +20,13 @@ namespace ehf
         {
             listBox_attachments.Items.Clear();
             fas.Clear();
-            foreach (string attachment in textBox_email.Text.Split(new string[] { "Content-Disposition: attachment" }, StringSplitOptions.None))
+            foreach (string attachment in textBox_email.Text.Split(new string[] { "Content-Type:" }, StringSplitOptions.None))
             {
-                if (attachment.Contains("filename=\""))
+                if (attachment.Contains("name=\""))
                 {
                     if (attachment.Contains("Content-Transfer-Encoding: base64"))
                     {
-                        string fname = attachment.Split(new string[] { "filename=\"" }, StringSplitOptions.None)[1].Split('\"')[0];
+                        string fname = attachment.Split(new string[] { "name=\"" }, StringSplitOptions.None)[1].Split('\"')[0];
                         string b64 = Regex.Split(attachment, @"(\r\n){2}", RegexOptions.ExplicitCapture)[1].Split('-')[0];
                         fas.Add(new file_attachment { filename = fname, base64 = b64 });
                         listBox_attachments.Items.Add(fname);
